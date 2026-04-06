@@ -23,4 +23,4 @@
 2. قم باستيراد ملف inventory_system (2).sql المرفق داخل قاعدة البيانات (phpMyAdmin).
 3. ضع ملفات المشروع داخل مجلد في مسار الـ htdocs.
 4. افتح/ي رابط صفحة الدخول في متصفحك: 
-   http://localhost/[اسم_المجلد]/entry/login.php
+   [ http://localhost/[اسم_المجلد]/entry/login.php ]
