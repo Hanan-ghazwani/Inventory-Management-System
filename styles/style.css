@@ -1,0 +1,609 @@
+:root {
+    --radius-0: 0;
+    --radius-2: 2px;
+    --radius-4: 4px;
+    --radius-8: 8px;
+    --radius-16: 16px;
+    --radius-24: 24px;
+    --radius-9999: 9999px;
+    --components-card-radius: var(--spacing-4);
+    --radius-none: var(--radius-0);
+    --radius-xs: var(--radius-2);
+    --radius-sm: var(--radius-4);
+    --radius-md: var(--radius-8);
+    --radius-lg: var(--radius-16);
+    --radius-xl: var(--radius-24);
+    --radius-full: var(--radius-9999);
+    --colors-base-white: #ffffff;
+    --colors-base-black: #161616;
+    --colors-primary-sa-flag-25: #f7fdf9;
+    --colors-primary-sa-flag-50: #f3fcf6;
+    --colors-primary-sa-flag-100: #dff6e7;
+    --colors-primary-sa-flag-200: #b8eacb;
+    --colors-primary-sa-flag-300: #88d8ad;
+    --colors-primary-sa-flag-400: #54c08a;
+    --colors-primary-sa-flag-500-alpha-10: #25935f19;
+    --colors-primary-sa-flag-500: #25935f;
+    --colors-primary-sa-flag-600-primary: #1b8354;
+    --colors-primary-sa-flag-700: #166a45;
+    --colors-primary-sa-flag-800: #14573a;
+    --colors-primary-sa-flag-900: #104631;
+    --colors-primary-sa-flag-950: #092a1e;
+    --colors-secondary-gold-25: #fffef7;
+    --colors-secondary-gold-50: #fffef2;
+    --colors-secondary-gold-100: #fffce6;
+    --colors-secondary-gold-200: #fcf3bd;
+    --colors-secondary-gold-300: #fae996;
+    --colors-secondary-gold-400: #f7d54d;
+    --colors-secondary-gold-500: #f5bd02;
+    --colors-secondary-gold-600-primary: #dba102;
+    --colors-secondary-gold-700: #b87b02;
+    --colors-secondary-gold-800: #945c01;
+    --colors-secondary-gold-900: #6e3c00;
+    --colors-secondary-gold-950: #472400;
+    --colors-tertiary-lavendar-25: #fefcff;
+    --colors-tertiary-lavendar-50: #f9f5fa;
+    --colors-tertiary-lavendar-100: #f2e9f5;
+    --colors-tertiary-lavendar-200: #e1cce8;
+    --colors-tertiary-lavendar-300: #ccadd9;
+    --colors-tertiary-lavendar-400: #a57bba;
+    --colors-tertiary-lavendar-500-primary: #80519f;
+    --colors-tertiary-lavendar-600: #6d428f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* === إعدادات أساسية === */
+body {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-top: 70px; /* تعويض ارتفاع الهيدر */
+}
+
+/* === الشريط الثانوي === */
+.secondary-bar {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#f8f8f8;
+    padding: 10px 20px; /* زيادة ارتفاع الشريط */
+    font-size: 12px;
+    color: #6c6b6b;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.secondary-bar span {
+    padding: 0; /* تباعد داخلي*/
+}
+
+.secondary-bar .right-info {
+    display: flex;
+    gap: 8px; /*التباعد بين العناصر*/
+    align-items: center;
+    direction: ltr;
+}
+
+.secondary-bar .right-info span {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.secondary-bar i {
+    font-size: 14px;
+}
+
+.secondary-bar .left-icons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.secondary-bar .left-icons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+
+.secondary-bar .left-icons button i {
+    font-size: 18px;
+    color: black;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.secondary-bar .left-icons button i:hover {
+    transform: scale(1.2); /* تكبير الأيقونة عند التمرير */
+    color: var(--hover-color);
+}
+
+
+/* === الهيدر === */
+header {
+    background-color: #ffffff;
+    display: flex;
+    color: black;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px; /* ضبط الحواف */
+    top: 0; /* لضبط الموضع مع الشريط الثانوي */
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 60px;
+}
+
+.logo img {
+    height: 40px; /* حجم  الشعار */
+    margin-right: 15px; /*ازاحة بسيطة لليمين*/
+    margin-top: -10px; /*رفع الشعار للاعلى*/
+}
+
+/*---------------------------------------*/
+
+/*---------------------------------------*/
+
+header .navbar {
+    background-color: white;
+    display: flex;
+    gap: 20px; /*مسافة بين كل عنصر وعنصر من النافبار*/
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    text-align: center;
+    margin-top: -20px; /*رفع النافبار للاعلى*/
+}
+
+header .navbar a {
+    color: black;
+    text-decoration: none; /*ازالة الخط السفلي*/
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+header .navbar a:hover {
+    color: #706e6e;
+}
+
+/*حاوية عناصر اللغه و تسجيل الخروج*/
+.extra-options {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 10px;
+    margin-top: -17px
+}
+
+.extra-options a {  /*العناصر اللغه و تسجيل الخروج*/
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.extra-options a i {
+    margin-left: 5px;
+}
+
+.extra-options a:hover {
+    color: var(--hover-color);
+}
+/* === القسم الأول (Hero Section) === */
+.hero-section {
+    position: relative;
+    background-image: url('../image/t1.jpg'); /* مسار الصورة */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 460px; /* ارتفاع القسم */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0c2e16c7; /* تظليل أخضر شفاف */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section .text {
+    position: relative;
+    color: white;
+    z-index: 2; /* لضمان ظهور النص فوق التظليل */
+}
+
+.hero-section .text h2 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-section .text p {
+    font-size: 18px;/**/
+    margin-bottom: 20px; /**/
+    line-height: 1.6; /**/
+}
+
+.hero-section .text .btn {
+    padding: 4px 40px;
+    font-size: 16px;
+    background-color:white;
+    color:black;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid #00573f;
+    display: inline-block;
+    width: auto;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.hero-section .text .btn:hover {
+    background-color: #d7d7d7;
+    border-color: #092a1e;
+}
+
+
+/* === قسم الخدمات === */
+.services-section {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.services-section p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.services {
+    display: flex;
+    justify-content: space-around; /* توزيع متساوٍ بين العناصر */
+    gap: 40px; /* مسافات بين العناصر */
+    flex-wrap: wrap; /* السماح بالكسر في الصفوف الصغيرة */
+    margin-top: 30px;
+}
+
+.service {
+    text-align: center;
+    flex: 1;
+    min-width: 150px; /* عرض أدنى */
+}
+
+.service img {
+    width: 50px; /* حجم الرمز */
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.service p:first-of-type {
+    font-size: 20px; /* الرقم (1.5M) */
+    font-weight: bold;
+    margin: 5px 0;
+    color: #000;
+}
+
+.service p:last-of-type {
+    font-size: 16px; /* النص الوصفي (إضافة المخزون) */
+    color: #555;
+    margin: 0;
+}
+
+
+/* === الجداول (Tables) === */
+/* العنوان */
+h1 {
+    margin-top: 30px;
+    text-align: center; /* التوسيط */
+    font-size: 22px; /* تكبير الحجم */
+    color: var(--colors-primary-sa-flag-950); /* لون من الوان المنصه الموحده */
+    margin-bottom: 5px; /* مسافة تحت العنوان */
+    font-weight: bold;
+}
+
+/* === الجدول === */
+/* تنسيق الجدول */
+table {
+    width: auto; /* عرض الجدول حسب المحتوى */
+    max-width: 800px; /* أقصى عرض للجدول */
+    margin: 20px auto; /* توسيط الجدول */
+    border-radius: 8px; /* حواف مستديرة */
+    overflow: hidden; /* تطبيق الحواف المستديرة */
+    background-color: #fff; /* خلفية الجدول */
+    border: 2px solid #ccc; /* حواف الجدول  */
+}
+
+/* رؤوس الجدول */
+thead th {
+    background-color: #f9f9f9; /* خلفية رمادية فاتحة للرؤوس */
+    color: #333; /* لون النص */
+    padding: 10px 20px; /* تقليل المسافات داخل الخلايا */
+    text-align: right; /* محاذاة النص إلى اليمين */
+    font-weight: bold;
+    font-size: 13px; /*  */
+    border-bottom: 1px solid #bebdbd; /* خطوط فاصلة واضحة بين العناوين */
+}
+
+/* خلايا المحتوى */
+tbody td {
+    padding: 15px 20px; /* مسافات داخلية مع زيادة لليسار*/
+    text-align: right; /* محاذاة النص إلى اليمين */
+    font-size: 13px; /* خط صغير للمحتوى */
+    color: #555; /* لون النص */
+}
+
+/* صفوف الجدول بالتناوب */
+tbody tr:nth-child(odd) {
+    background-color: #fff; /* لون أبيض للصفوف الفردية */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* لون رمادي فاتح للصفوف الزوجية */
+}
+
+/* خطوط فاصلة عند التمرير */
+tbody tr:hover {
+    background-color: #f7f7f7; /* خلفية عند التمرير */
+}
+
+/* ألوان الحالات */
+tbody td.status-pending {
+    color: #f0ad4e; /* ذهبي */
+}
+
+tbody td.status-approved {
+    color: #5cb85c; /* أخضر */
+}
+
+tbody td.status-rejected {
+    color: #d9534f; /* أحمر */
+}
+
+tbody td.status-distribution {
+    color: #f7a76c; /* برتقالي */
+}
+
+/* تحسين الروابط */
+.action-icon a {
+    color: var(--colors-primary-sa-flag-700);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.action-icon a:hover {
+    color: var(--colors-primary-sa-flag-800);
+    text-decoration: underline;
+}
+/*......................................................*/
+
+
+/* تنسيق صفحة new-request الطلبات الجديدة*/
+.form-container {
+    width: 50%; /* عرض مناسب للحاوية */
+    max-width: 500px; /* أقصى عرض للحاوية */
+    margin: 20px auto; /* مركز الحاوية مع مسافة علوية */
+    background: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h1 {
+    text-align: center;
+    color: var(--colors-primary-sa-flag-950);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.notification {
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.notification.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+form input,
+form select,
+form textarea,
+form button {
+    width: 100%; /* عرض كامل للحقول */
+    padding: 12px; /* مسافة داخلية أكبر */
+    font-size: 16px; /* حجم خط مناسب */
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button.submit-btn {
+    background-color: var(--colors-primary-sa-flag-600-primary);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px; /* حجم زر مناسب */
+    padding: 12px; /* مسافة داخلية أكبر */
+}
+
+button.submit-btn:hover {
+    background-color: var(--colors-primary-sa-flag-900);
+}
+
+/*----------دائرة التحميل-------*/
+.loader-container {
+    display: flex; /*عند الرغبة باخفائها افتراضيا تغيير الflex الى none*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;/*فوق جميع العناصر*/
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e6e6e6;
+    border-top: 4px solid #1b8354;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite; /*  حركة الدوران*/
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* === الفوتر === */
+footer {
+    background-color: var(--colors-primary-sa-flag-900);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-links h3 {
+    color: #f4f4f4;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 5px 0;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: white;
+}
+
+footer p {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 20px;
+}
+
+footer p span {
+    color: #5b8faa;
+}
+
+/* === استجابة الهواتف (Responsive Design) === */
+@media (max-width: 768px) {
+    .secondary-bar {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .services {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .service img {
+        width: 50px; /* تقليل حجم الرمز للشاشات الصغيرة */
+        height: 50px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

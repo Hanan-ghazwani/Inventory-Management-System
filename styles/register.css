@@ -1,0 +1,308 @@
+/* الحاوية العامة */
+body {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* الحاوية الرئيسية */
+.container {
+    width: 500px; /* عرض أصغر للحاوية */
+    padding: 50px; /* مسافة داخلية */
+    margin-top: 80px; /* مسافة خارجية لتبرز الحاوية بالكامل */
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* العنوان */
+h1 {
+    font-size: 22px; /* تصغير حجم العنوان */
+    color: #1A1A1A;
+    margin-bottom: 20px;
+}
+
+/* تنسيق المجموعة */
+.form-group {
+    position: relative;
+    margin-bottom: 25px; /* تباعد بين الحقول */
+    text-align: right; /* لمحاذاة النص لليمين */
+}
+
+/* النصوص */
+label {
+    font-size: 14px; /* حجم أصغر للنص */
+    font-weight: bold;
+    color: #1A1A1A;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* الحقول */
+input, select {
+    width: 100%;
+    padding: 8px; /* تقليل البادينق */
+    font-size: 14px; /* تصغير حجم الخط */
+    border: none;
+    border-bottom: 2px solid #CCCCCC;
+    background: none;
+    box-sizing: border-box;
+}
+
+/* التأثير عند التركيز */
+input:focus, select:focus {
+    outline: none;
+    border-bottom: 2px solid #1b8354; /* لون الخط الأخضر */
+}
+
+/* الخط المتحرك */
+.line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #1b8354;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+}
+
+input:focus ~ .line, select:focus ~ .line {
+    transform: scaleX(1);
+}
+
+/* -انشاء حساب-الزر */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1b8354;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px; /* خط أصغر */
+    font-family: 'Noto Kufi Arabic', sans-serif; /* تغيير الخط */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #166a45;
+}
+
+/* الروابط */
+.text-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.text-link a {
+    color: #1b8354;
+    text-decoration: none;
+}
+
+.text-link a:hover {
+    text-decoration: underline;
+}
+
+
+/*الاشعارات*/
+.notification {
+    position: relative;
+    margin: 15px auto;
+    width: 90%; /* عرض الإشعار */
+    max-width: 400px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.notification-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notification-header i {
+    font-size: 20px;
+    margin-right: 13px;
+}
+
+.notification-body {
+    margin-top: 10px;
+    color: #555;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* الأنواع المختلفة للإشعارات */
+.notification.success {
+    background-color: #a9eeaf;
+    border-left: 5px solid #338336;
+    color: #2b632d;
+}
+
+.notification.error {
+    background-color: #ffdcdc;
+    border-left: 5px solid #D8000C;
+    color: #a00008;
+}
+
+.notification.warning {
+    background-color: #FEEFB3;
+    border-left: 5px solid #FFAA00;
+    color: #FFAA00;
+}
+
+.notification.info {
+    background-color: #BDE5F8;
+    border-left: 5px solid #00529B;
+    color: #00529B;
+}
+
+/* تنسيق الحاوية   */
+.dropdown-container {
+    position: relative;
+    width: 100%;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+}
+
+.dropdown-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #28A745;
+    transform: translateX(-50%);
+    transition: all 0.5s;
+}
+
+/* تنسيق التسمية */
+.dropdown-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #495057;
+    margin-bottom: 5px;
+    display: block;
+}
+
+
+
+/* تنسيق القائمة المنسدلة */
+.dropdown {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+}
+
+/* تأثير عند التمرير */
+.dropdown:hover {
+    border-color: #28A745; /* لون الأخضر */
+}
+
+
+/* تنسيق الحقل */
+.custom-dropdown {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    transition: border-color 0.3s ease;
+    position: relative;
+    padding-right: 35px;
+}
+
+/* النص التوضيحي */
+.custom-dropdown option:disabled {
+    color: #a0a0a0; /* اللون الرمادي */
+}
+
+/* تأثير عند التركيز */
+.custom-dropdown:hover {
+    border-color: #28a745;
+}
+
+/* الخط المتحرك */
+.custom-dropdown-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.custom-dropdown-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #28a745;
+    transition: all 0.5s ease;
+    transform: translateX(-50%);
+}
+
+.custom-dropdown:focus ~ .custom-dropdown-container::after {
+width: 100%;
+left: 0;
+transform: translateX(0);
+}
+
+/* السهم */
+.dropdown-arrow {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #495057;
+    transition: transform 0.3s ease;
+}
+
+/* تغيير اتجاه السهم عند فتح القائمة */
+.custom-dropdown:focus ~ .dropdown-arrow {
+    transform: translateY(-50%) rotate(180deg);
+}
